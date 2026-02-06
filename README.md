@@ -239,6 +239,187 @@ O(n²)
 
 ---
 
+Matrix Multiplication Time and Space Complexity
+Problem
+
+Multiply two matrices A and B of size n × n to produce matrix C.
+
+Algorithm
+Algorithm multiply(A, B, n)
+Begin
+  for i = 0 to n-1
+    for j = 0 to n-1
+      C[i][j] = 0
+      for k = 0 to n-1
+        C[i][j] = C[i][j] + A[i][k] * B[k][j]
+End
+Time Complexity Analysis (Frequency Count Method)
+Loop Execution Count
+Loop	Runs	Explanation
+i loop	n	iterates over rows
+j loop	n	iterates over columns
+k loop	n	performs multiplication and addition
+Total execution count
+Total operations = n × n × n
+                 = n³
+Mathematical Function
+f(n) = n³
+Big‑O Notation
+O(n³)
+Space Complexity Analysis
+Variables Used
+Variable	Space Required
+Matrix A	n²
+Matrix B	n²
+Matrix C	n²
+i, j, k	3
+Total Space
+s(n) = 3n² + 3
+Big‑O Space
+O(n²)
+Time Complexity Analysis Notes
+
+These notes help analyze algorithm complexity based on loop structures.
+
+1. Linear Time Complexity — O(n)
+Simple Loop
+for(i = 1; i <= n; i++)
+
+Runs n times
+
+Time Complexity = O(n)
+Reverse Loop
+for(i = n; i >= 1; i--)
+
+Also runs n times
+
+Time Complexity = O(n)
+Loop with Step Increment
+for(i = 1; i <= n; i = i + 2)
+
+Runs n/2 times
+
+But Big‑O ignores constants:
+
+O(n)
+
+Example:
+
+n/20 → O(n)
+2. Quadratic Time Complexity — O(n²)
+Standard Nested Loop
+for(i = 0; i < n; i++)
+  for(j = 0; j < n; j++)
+
+Execution count:
+
+n × n = n²
+O(n²)
+Dependent Nested Loop
+for(i = 0; i < n; i++)
+  for(j = 0; j < i; j++)
+
+Execution pattern:
+
+When i = 0 → 0 times
+When i = 1 → 1 time
+When i = 2 → 2 times
+...
+When i = n → n times
+
+Total executions:
+
+1 + 2 + 3 + ... + n
+= n(n+1)/2
+
+Polynomial form:
+
+(n² + n)/2
+
+Ignoring lower term:
+
+O(n²)
+3. Square Root Time Complexity — O(√n)
+Example
+p = 0
+for(i = 1; p <= n; i++)
+  p = p + i
+
+Execution pattern:
+
+p = 1 + 2 + 3 + ... + k
+
+Formula:
+
+p = k(k+1)/2
+
+Condition:
+
+k² ≈ n
+
+Result:
+
+k ≈ √n
+
+Time complexity:
+
+O(√n)
+Key Takeaways for Complexity Analysis
+1. Tracing Method
+
+Track variable values step‑by‑step.
+
+Example:
+
+i = 1, 2, 3, 4, ..., n
+
+Count total executions.
+
+2. Frequency Count Method
+
+Count how many times each statement executes.
+
+Example:
+
+for(i=0; i<n; i++)
+
+Runs n times.
+
+3. Focus on Highest Degree
+
+Example:
+
+f(n) = n² + n + 10
+
+Ignore lower terms:
+
+O(n²)
+4. Ignore Constants
+
+Example:
+
+f(n) = 5n + 10
+
+Result:
+
+O(n)
+5. Common Complexity Reference Table
+Complexity	Name	Example
+O(1)	Constant	Access array element
+O(log n)	Logarithmic	Binary search
+O(n)	Linear	Simple loop
+O(n log n)	Linearithmic	Merge sort
+O(n²)	Quadratic	Nested loops
+O(n³)	Cubic	Matrix multiplication
+O(2ⁿ)	Exponential	Recursive Fibonacci
+Matrix Multiplication Summary
+Metric	Complexity
+Time Complexity	O(n³)
+Space Complexity	O(n²)
+Type	Cubic time algorithm
+
+Author: Abdul Bari DSA Notes (Refined and Structured)
+
 # 📚 Credits
 
 Based on lectures by **Abdul Bari**
